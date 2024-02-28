@@ -1,62 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="stylesheet.css" />
+<link rel="stylesheet" href="stylesheet.css" />
 
-  <head>
-    <meta charset="UTF-8" />
-    <script src="Functions1.js"></script>
-    <title>Home</title>
-      <link rel="Stylesheet" href="stylesheet.css">
+<head>
+  <meta charset="UTF-8" />
+  <script src="Functions1.js"></script>
+  <title>Home</title>
+  <link rel="Stylesheet" href="stylesheet.css" />
 </head>
-  <body>
 
-  <div class = "grid-container">
-    <div class = "grid-item">
+<body>
+
+
+  <!-- Hide and save for later-->
+  <div class="shit" style="display: none;">
     <!--Dropdown menu button-->
     <div class="dropdown">
-      <button onclick="dropdownMenu()" class="dropbtn">
-        Dropdown menu, to be positioned
-      </button>
+      <button onclick="dropdownMenu()" class="dropbtn">Meny</button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#" class="active">Hjem</a>
+        <a href="#">Om</a>
+        <a href="#">Tjenester</a>
+        <a href="#">Butikker</a>
+        <a href="#">Kontakt</a>
       </div>
     </div>
+  </div>
+
+
+  <div class="grid-container">
+    <div class="grid-item">
+
+      <!--Navigation Bar here?-->
+      <div class="navbar">
+        <div class="topnav" id="myTopnav">
+          <a href="#" class="active">Hjem</a>
+          <a href="#">Om</a>
+          <a href="#">Tjenester</a>
+          <a href="#">Butikk</a>
+          <a href="#">Kontakt</a>
+
+          <a href="javascript:void(0);" class="icon" onclick="menuButton()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+          </a>
+        </div>
+        <div class="shopIcon">
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+              class="bi bi-cart" viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg></a>
+        </div>
+      </div>
     </div>
-    <!--Navigation Bar here?-->
 
     <!-- In front of picture here? -->
-    <div class = "grid-item item1">
-      <p>Hei og velkommen til </p><h2>KDHLOGOPED</h2>
-      <p>KDHlogoped hjelper deg som jobber med barn og unge,
-        eller har barn selv, som ønsker tips og ideer til hvordan
-        du kan jobbe med språk- og kommunikasjonsrelaterte emner.
-        Jeg deler alt fra generelle tips i din hverdag, til mer spesifikke
-        tips, blant annet evidensbaserte tilnærminger for barn med språk-
-        og kommunikasjonsrelaterte utfordringer. Jeg deler også gratis
-        spill og fortellinger, samt aktivitetshefter.</p>
+    <div class="grid-item item1">
+      <p>Hei og velkommen til</p>
+      <h2>KDHLOGOPED</h2>
+      <p>
+        KDHlogoped hjelper deg som jobber med barn og unge, eller har barn
+        selv, som ønsker tips og ideer til hvordan du kan jobbe med språk- og
+        kommunikasjonsrelaterte emner. Jeg deler alt fra generelle tips i din
+        hverdag, til mer spesifikke tips, blant annet evidensbaserte
+        tilnærminger for barn med språk- og kommunikasjonsrelaterte
+        utfordringer. Jeg deler også gratis spill og fortellinger, samt
+        aktivitetshefter.
+      </p>
     </div>
 
     <div class="grid-item item2">
-      <h>Lekbasert læring</h><br>
-        <h>“Barn uttrykker seg gjennom lek, og det er gjennom leken at ord får liv!”</h>
+      <h>Lekbasert læring</h><br />
+      <h>“Barn uttrykker seg gjennom lek, og det er gjennom leken at ord får
+        liv!”</h>
     </div>
 
     <footer>
       <!-- Links to other pages?-->
       <href>Om meg</href>
-      <a href = "https://www.instagram.com/kdhlogoped/"><img src="https://cdn.pixabay.com/photo/2016/09/17/07/03/instagram-1675670_1280.png"></a>
-
+      <a href="https://www.instagram.com/kdhlogoped/"><img
+          src="https://cdn.pixabay.com/photo/2016/09/17/07/03/instagram-1675670_1280.png" /></a>
     </footer>
-
-
-
-
-
-
   </div>
+</body>
 
-
-  </body>
 </html>

@@ -7,6 +7,56 @@ body {
 
 /* || NAVBAR || */
 
+/* Navbar Grid */
+.navbar {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    /* Shopping cart uses 1/10 of navbar always*/
+    overflow: hidden;
+}
+
+/* Shopping icon */
+.shopIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Links inside the navigation bar */
+.topnav,
+a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Highlight the current page 
+  .topnav a.active {
+    background-color: white;
+    color: black;
+  }
+  */
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
 /* || GRID || */
 
 .grid-container {
@@ -22,9 +72,9 @@ body {
 
 
 /*Hei og velkommen */
-.item1{
+.item1 {
     /*background-image: url("https://cdn.pixabay.com/photo/2023/08/07/13/40/flowers-8175044_1280.png");*/
-   /* background-color: mediumpurple; */
+    /* background-color: mediumpurple; */
     border: 100px solid transparent;
     border-image: url("https://cdn.pixabay.com/photo/2023/08/07/13/40/flowers-8175044_1280.png") 300 round;
     padding: 30px;
@@ -48,7 +98,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
-footer img{
+
+footer img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -68,31 +119,36 @@ footer img{
     border: none;
     cursor: pointer;
 }
-  
+
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: orange;
     color: black;
     border: 1px;
     border-style: solid;
 }
-  
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative; 
+    position: relative;
     display: inline-block;
 }
-  
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: absolute; /* So the content is placed right below button. dropdown-content needs position:relative*/  
+    position: absolute;
+    /* So the content is placed right below button. dropdown-content needs position:relative*/
     background-color: palevioletred;
-    min-width: 160px; /* Set to 100% if it should be as wide as the dropdown button */
-    z-index: 1; /* Place on top of other elements*/
-    overflow: auto; /* Enables scroll on small screen */   
+    min-width: 160px;
+    /* Set to 100% if it should be as wide as the dropdown button */
+    z-index: 1;
+    /* Place on top of other elements*/
+    overflow: auto;
+    /* Enables scroll on small screen */
 }
-  
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -100,11 +156,47 @@ footer img{
     text-decoration: none;
     display: block;
 }
-  
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: purple;
 }
-  
+
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+    display: block;
+}
+
+
+/* || MEDIA QUERIES || */
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 800px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 800px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
