@@ -31,14 +31,23 @@ body {
 }
 
 /*quote*/
-.item2 img{
+/* OLD CODE
+ .item2 img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 80%;
     max-height: 80%;
 }
+*/
 
+.item2 {
+    padding: 100px;
+    /* Just a template image for now */
+    background-image: url("https://cdn.pixabay.com/photo/2017/09/24/19/16/boy-2782835_1280.jpg"), url("https://cdn.pixabay.com/photo/2017/09/24/19/06/girls-2782781_1280.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 footer img{
     display: block;
     margin-left: auto;
