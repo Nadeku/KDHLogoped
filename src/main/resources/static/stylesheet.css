@@ -1,6 +1,7 @@
 /* || SITEWIDE ||  */
 
 body {
+    margin: 0;
     font-family: "Comic Sans MS";
 }
 
@@ -9,74 +10,88 @@ header {
     width: 100%;
     height: 200px;
     text-align: center;
-    
+
 }
 
+/* || NAV || */
 
-/* || NAVBAR || */
-
-/* Navbar Grid */
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 16fr 1fr;
-    /* Shopping cart uses 1/10 of navbar*/
-    overflow: hidden;
-
+    width: 100%;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.logo img {
-    width: 50px;
-   
-}
-/* Shopping icon */
-.shopIcon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.topnav {
-    background-color: white;
-    overflow: hidden;
-    
-    
-}
-
-/* Links inside the navigation bar */
-.topnav,
-a {
-    float: left;
-    display: block;
+.navbar li a {
     color: black;
     text-align: center;
-    padding: 14px 30px;
+    padding: 20px 20px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5em;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-    border-left: 1px solid rgb(182, 62, 164);
-    border-right: 1px solid rgb(182, 62, 164);
-}
-
-/* Highlight the current page 
-  .topnav a.active {
-    background-color: white;
-    color: black;
-  }
-  */
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.navbar li a:not(.menu-toggle) {
     display: none;
 }
+
+.navbar.responsive li a {
+    display: block;
+}
+
+.navbar .menu-toggle {
+    display: block;
+    text-align: right;
+    padding: 14px 20px;
+    font-size: 2em;
+}
+
+.navbar.responsive .menu-toggle {
+    text-align: right;
+}
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+
+    /* Mobile first! Sure u want to add something here?*/
+
+}
+
+/* Big screens */
+@media screen and (min-width: 600px) {
+
+    .navbar .menu-toggle{
+        display: none;
+    }
+
+    .navbar li a:not(.menu-toggle) {
+        display: block;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+    }
+
+/* If a in li will spread the whole width
+    .navbar li {
+        flex: 1;
+    }
+    */
+    
+    .navbar li a:hover:not(.menu-toggle) {
+        /* I like this hover, but it moves
+        the under div when hovering. */
+        border-bottom: 1px solid black;
+        
+
+    }
+
+}
+
 
 /* || GRID || */
 
@@ -91,7 +106,7 @@ a {
     text-align: center;
     /*Making grid items clear while working with it: 
     border: 1px solid red;*/
-    
+
 }
 
 
@@ -136,34 +151,3 @@ footer img {
 }
 
 /* || MEDIA QUERIES || */
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 800px) {
-    .topnav a:not(:first-child) {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 800px) {
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
