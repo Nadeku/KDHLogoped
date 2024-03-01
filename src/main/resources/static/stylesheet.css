@@ -21,7 +21,9 @@ header {
     grid-template-columns: 1fr 16fr 1fr;
     /* Shopping cart uses 1/10 of navbar*/
     overflow: hidden;
+
 }
+
 .logo {
     display: flex;
     justify-content: center;
@@ -42,6 +44,7 @@ header {
 .topnav {
     background-color: white;
     overflow: hidden;
+    
     
 }
 
@@ -86,6 +89,9 @@ a {
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
+    /*Making grid items clear while working with it: 
+    border: 1px solid red;*/
+    
 }
 
 
@@ -123,6 +129,8 @@ footer img {
     margin-right: auto;
     max-width: 25%;
     max-height: 25%;
+
+    /*NB! Instagram img has an inline style to manage the size for now. sorry*/
 
 
 }
