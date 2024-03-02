@@ -17,6 +17,7 @@ header {
 
 .navbar {
     width: 100%;
+    margin: 1em;
 }
 
 .navbar ul {
@@ -37,6 +38,12 @@ header {
     display: none;
 }
 
+.navbar li a:hover:not(.menu-toggle),
+    .navbar li a:active:not(.menu-toggle) {
+        text-decoration: underline;
+        /* Rember to reset in big screen if make changes here  */
+    }
+
 .navbar.responsive li a {
     display: block;
 }
@@ -50,46 +57,6 @@ header {
 
 .navbar.responsive .menu-toggle {
     text-align: right;
-}
-
-/* Small screens */
-@media screen and (max-width: 600px) {
-
-    /* Mobile first! Sure u want to add something here?*/
-
-}
-
-/* Big screens */
-@media screen and (min-width: 600px) {
-
-    .navbar .menu-toggle{
-        display: none;
-    }
-
-    .navbar li a:not(.menu-toggle) {
-        display: block;
-    }
-
-    .navbar ul {
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-    }
-
-/* If a in li will spread the whole width
-    .navbar li {
-        flex: 1;
-    }
-    */
-    
-    .navbar li a:hover:not(.menu-toggle) {
-        /* I like this hover, but it moves
-        the under div when hovering. */
-        border-bottom: 1px solid black;
-        
-
-    }
-
 }
 
 
@@ -151,3 +118,36 @@ footer img {
 }
 
 /* || MEDIA QUERIES || */
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+
+    /* Mobile first! Sure u want to add something here?*/
+
+}
+
+/* Big screens */
+@media screen and (min-width: 600px) {
+
+    .navbar .menu-toggle {
+        display: none;
+    }
+
+    .navbar li a:not(.menu-toggle) {
+        display: block;
+        padding-bottom: 3px; /* So a:hover border is closer to text */
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .navbar li a:hover:not(.menu-toggle),
+    .navbar li a:active:not(.menu-toggle) {
+        border-bottom: 1px solid black;
+        text-decoration: none;
+    }
+
+}

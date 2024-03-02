@@ -1,6 +1,7 @@
 
 
-/* Toggle between adding and removing the "responsive" class to navbar from menu click in small screen*/
+/* Toggle between adding and removing the responsive class
+ to navbar from menu click in small screen*/
 function menuToggle() {
   var x = document.getElementById("navbar");
   if (x.className === "navbar") {
@@ -10,11 +11,13 @@ function menuToggle() {
   }
 }
 
-/* Remove responsive class on window resize*/
-function removeResponsiveClass(){
+/* Make sure responsive class is not present if screen >= 600px*/
+function removeResponsiveClass() {
   var x = document.getElementById("navbar");
-  x.classList.remove("responsive");
+  if (x.classList.contains("responsive") && window.innerWidth >= 600) {
+    x.classList.remove("responsive");
     x.className = "navbar";
+  }
 }
 
 window.addEventListener("resize", removeResponsiveClass);
