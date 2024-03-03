@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
   <nav class="navbar" id="navbar">
     <ul>
       <li class menu-toggle-li><a href="javascript:void(0);" class="menu-toggle" onclick="menuToggle()">
@@ -25,6 +24,37 @@
       <li><a href="#">Kontakt</a></li>
       <li></li>
     </ul>
+  </nav>
+
+
+  <nav class="navbar2">
+
+
+    <!--For now double code in html HIDE/SHOW between screens-->
+    <ul class="desktop">
+      <li><a href="#" class="active">Hjem</a></li>
+      <li><a href="#">Om</a></li>
+      <li><a href="#">Tjenester</a></li>
+      <li><a href="#">Butikk</a></li>
+      <li><a href="#">Kontakt</a></li>
+      <li></li>
+    </ul>
+
+
+    <!--Hide button on big screen-->
+    <a class="menuBtn" onclick="openNav()"><i class="fa-solid fa-bars"></i></a>
+
+    <div id="nav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> <i class="fa-solid fa-xmark"></i></a>
+
+      <ul class="overlay-content">
+        <li><a href="#" class="active">Hjem</a></li>
+        <li><a href="#">Om</a></li>
+        <li><a href="#">Tjenester</a></li>
+        <li><a href="#">Butikk</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
   </nav>
 
 
@@ -93,49 +123,50 @@
       <a style="text-decoration: underline;" href="https://mailchimp.com/help/add-a-signup-form-to-your-website/">To do
         Kirsti: generate embedded form code mailchimp</a>
     </div>
-</div>
-    <footer>
-      <!-- Links to other pages?-->
-      <h>Om meg</h>
+  </div>
+  <footer>
+    <!-- Links to other pages?-->
+    <h>Om meg</h>
 
-      <h3>Kontakt</h3>
+    <h3>Kontakt</h3>
 
-      <a href="mailto:kirsti@tonsberglogopedene.no">
+    <a href="mailto:kirsti@tonsberglogopedene.no">
       <i class="fa-regular fa-envelope"></i> E-post
-      </a>
+    </a>
 
-      <a href="https://www.instagram.com/kdhlogoped/" target="_blank" rel="noopener noreferrer"><i
-          class="fa-brands fa-instagram"></i>
-        Instagram
-      </a>
+    <a href="https://www.instagram.com/kdhlogoped/" target="_blank" rel="noopener noreferrer"><i
+        class="fa-brands fa-instagram"></i>
+      Instagram
+    </a>
 
-      <a href="https://www.tonsberglogopedene.no/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-regular fa-building"></i>
-        Tønsberglogopedene
-      </a>
+    <a href="https://www.tonsberglogopedene.no/" target="_blank" rel="noopener noreferrer">
+      <i class="fa-regular fa-building"></i>
+      Tønsberglogopedene
+    </a>
 
-      <a href="https://www.tonsberglogopedene.no/" target="_blank" rel="noopener noreferrer"><img
-          src="https://www.tonsberglogopedene.no/wp-content/uploads/2019/07/color_logo_transparent-extra-small.jpg"></a>
+    <a href="https://www.tonsberglogopedene.no/" target="_blank" rel="noopener noreferrer"><img
+        src="https://www.tonsberglogopedene.no/wp-content/uploads/2019/07/color_logo_transparent-extra-small.jpg"></a>
 
-      <a href="https://www.instagram.com/kdhlogoped/" target="_blank" rel="noopener noreferrer"><img
-          style="width: 200px;" src="https://cdn.pixabay.com/photo/2016/09/17/07/03/instagram-1675670_1280.png" /></a>
+    <a href="https://www.instagram.com/kdhlogoped/" target="_blank" rel="noopener noreferrer"><img style="width: 200px;"
+        src="https://cdn.pixabay.com/photo/2016/09/17/07/03/instagram-1675670_1280.png" /></a>
 
-      <p>Epost: kirsti@tonsberglogopedene.no</p>
+    <p>Epost: kirsti@tonsberglogopedene.no</p>
 
-      <a href="oldmenu.html">Old menu</a>
-      <br />
-      <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">WCAG Guidelines</a>
-    
+    <a href="oldmenu.html">Old menu</a>
+    <br />
+    <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">WCAG Guidelines</a>
 
-      <!--Icons from font awesome-->
-      </br />
-      <i class="fa-brands fa-square-instagram"></i>
-      <i class="fa-solid fa-envelope"></i>
-      <i class="fa-solid fa-briefcase"></i>
-      <i class="fa-solid fa-cart-shopping"></i>
-      <i class="fa-solid fa-bag-shopping"></i>
-      <i class="fa-solid fa-basket-shopping"></i>
-    </footer>
+
+    <!--Icons from font awesome-->
+    </br />
+    <i class="fa-brands fa-square-instagram"></i>
+    <i class="fa-solid fa-envelope"></i>
+    <i class="fa-solid fa-briefcase"></i>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-bag-shopping"></i>
+    <i class="fa-solid fa-basket-shopping"></i>
+    <i class="fa-solid fa-xmark"></i>
+  </footer>
 
 </body>
 

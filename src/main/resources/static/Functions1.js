@@ -1,5 +1,17 @@
 
 
+/* HIDE SHOW MOBILE MENU navbar2*/
+function openNav() {
+  document.getElementById("nav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("nav").style.display = "none";
+}
+
+
+
+
 /* Toggle between adding and removing the responsive class
  to navbar from menu click in small screen*/
 function menuToggle() {

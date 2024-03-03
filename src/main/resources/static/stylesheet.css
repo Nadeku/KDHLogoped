@@ -5,14 +5,6 @@ body {
     font-family: "Comic Sans MS";
 }
 
-header {
-    border: 5px solid black;
-    width: 100%;
-    height: 200px;
-    text-align: center;
-
-}
-
 /* || NAV || */
 
 .navbar {
@@ -39,10 +31,10 @@ header {
 }
 
 .navbar li a:hover:not(.menu-toggle),
-    .navbar li a:active:not(.menu-toggle) {
-        text-decoration: underline;
-        /* Rember to reset in big screen if make changes here  */
-    }
+.navbar li a:active:not(.menu-toggle) {
+    text-decoration: underline;
+    /* Rember to reset in big screen if make changes here  */
+}
 
 .navbar.responsive li a {
     display: block;
@@ -57,6 +49,111 @@ header {
 
 .navbar.responsive .menu-toggle {
     text-align: right;
+}
+
+/* NAVBAR 2 */
+
+.navbar2 {
+    width: 100%;
+    height: 80px;
+    background-color: pink;
+    display: block;
+}
+
+/* Phone mode */
+
+.desktop {
+    display: none;
+    /* Hide ul */
+}
+
+.menuBtn {
+    cursor: pointer;
+    float: right;
+    padding: 20px;
+    font-size: 2em;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay ul {
+    list-style-type: none;
+}
+
+.overlay a {
+    padding: 18px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+    text-decoration: underline;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+}
+
+/* Big screens */
+@media screen and (min-width: 600px) {
+
+    /* Hide phone menu btn, and style desktop menu*/
+    .navbar2 .menuBtn {
+        display: none;
+    }
+
+    .navbar2 ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .navbar2 li a {
+        color: black;
+        text-align: center;
+        padding: 20px 20px;
+        text-decoration: none;
+        font-size: 1.5em;
+        display: block;
+        padding-bottom: 3px;
+        /* So a:hover border is closer to text */
+    }
+
+    .navbar2 li a:hover,
+    a :active {
+        border-bottom: 1px solid black;
+        text-decoration: none;
+    }
+
 }
 
 
@@ -75,7 +172,6 @@ header {
     border: 1px solid red;*/
 
 }
-
 
 /*Hei og velkommen */
 .item1 {
@@ -135,7 +231,8 @@ footer img {
 
     .navbar li a:not(.menu-toggle) {
         display: block;
-        padding-bottom: 3px; /* So a:hover border is closer to text */
+        padding-bottom: 3px;
+        /* So a:hover border is closer to text */
     }
 
     .navbar ul {
