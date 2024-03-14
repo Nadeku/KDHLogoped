@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+    <style>
+        /* || NAV || */
+
+
+        /* Colors from header img 
+        pink #df7dc8
+        grey #514c48
+        beige hair #c4ad89
+        yellow #ded071
+        */
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        header img {
+            float: right;
+            max-width: 100%;
+        }
+
+        .navbar {
+
+            clear: both;
+            /* navbar stays under header and dont float togheter */
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: 1;
+
+            margin-bottom: 50px;
+        }
+
+        .navbar.responsive {
+            grid-template-rows: 6;
+        }
+
+        /* Nav grid */
+        .grid-logo {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .grid-cart {
+            grid-column-start: 8;
+            grid-column-end: 10;
+        }
+
+        .grid-toggle {
+            grid-column-start: 10;
+            grid-column-end: 12;
+        }
+
+        .grid-menu {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            grid-row: 2 6;
+
+        }
+
+        .nav-items {
+            grid-row: 1 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        /* Icon color */
+        .nav-items i {
+            color: black;
+
+        }
+
+     
+
+        .nav-items a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li a {
+            color: black;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-top: 1px solid #df7dc8;
+            border-bottom: 1px solid #df7dc8;
+
+        }
+
+
+        .navbar li a {
+            display: none;
+        }
+
+        .navbar li a:hover,
+        .navbar li a:active {
+            text-decoration: underline;
+            /* Rember to reset in big screen if make changes here  */
+        }
+
+        .navbar.responsive li a {
+            display: block;
+        }
+
+
+        @media only screen and (min-width: 600px) and (max-width: 800px) {
+
+            .navbar li a {
+                font-size: 1.2em;
+            }
+
+        }
+
+
+        /* Big screens */
+        @media screen and (min-width: 600px) {
+
+
+            .grid-cart {
+                grid-column-start: 10;
+                grid-column-end: 12;
+            }
+
+            .grid-menu {
+                grid-column-start: 3;
+                grid-column-end: 10;
+                grid-row: 1;
+            }
+
+            .navbar .menu-toggle {
+                display: none;
+            }
+
+            .navbar li a {
+                border: none;
+                position: relative;
+                display: block;
+                padding-bottom: 3px;
+                /* So a:hover border is closer to text */
+            }
+
+            .navbar ul {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .navbar li {
+                flex-wrap: wrap;
+            }
+
+            .navbar li a:hover,
+            .navbar li a:active {
+                text-decoration: none;
+                text-decoration: underline;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <img src="/src/main/resources/static/images/kdh.jpg" alt="">
+
+
+
+
+    </header>
+
+    <nav class="navbar" id="navbar">
+
+        <div class="grid-logo nav-items"><a href="#"><img style="width: 80px;"
+                    src="https://th.bing.com/th?id=OIP.g5AKW21APdv9ToQ-pwgo9AHaGK&w=274&h=228&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2">
+                <img style="width: 60px;"
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQYHBQIEA//EADYQAAIBBAAEBAQCCQUAAAAAAAABAgMEBREGEiExE0FRYRQiMnGBkQcjJDNCocHR4RUWQ1Lw/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAQCAQMF/8QAHREBAQEBAQEBAQEBAAAAAAAAAAECAxESMSFCIv/aAAwDAQACEQMRAD8A3EEPsU2lx9bqtWhc2NxGnCfLCdNc2166M3cn61M2/i5g4+C4kxmdlUjjq7nOmtzhKLi1+DOud99Z88SADoAAAAAAAAAAAAAAAAAAAAAAAAAADxVUpUpxg0pOL02tpMoV3grmlZ+DVi5Sivn5afSa9n5GgHmcVKLUltHl05zb059LhleMlWwGUd7SUJPkcK0eTl5lvevb/Bo2HytrlbZVrWa7fNF94s5uZwFKrCc6EdbfNJJdSkO2usfcSdjeSp1YTTUYfK1Hyj7onzvXK+a/HvcTrPY1kFYwHFFG7pRpX/LRrro57+SX9iy05xqRUoSUovs12K87zr8Tazc3+vR81zeW1tVo07ivTpzrS5aUZyS536I+grHH+DlmsNzW6XxdpPxqP31p/jo7b/HJ/as67ElW4DzdbL4p0r9avrV+HU6/WtdJ/j1/ItAl9npZZfEgA64AAAAAAAAAAAAAAAAAAAAAIa2iv3PDFGV3UuqE5Kc97hLquvp6FhBnWJqeVrOrm+xnOQ4cr0q9WVecpxqTU4Rm1qm12Sa8vufJbXmVxckqFWpSpx6uMtOD/ojTpwU4uM0mn5M5N5hKNTmdFRjzd4tbi2S64az/AHNUZ7Z1/NRVKH6So+NGlUsHJReqtVT7680i4Y7O4zI2kbi2u6fJJb1OSTS90Zzf8C16V1X8J1KdLq4z05Lr/wCZ+FbE+BSlDw4xp04R3KEujj7+Qnbef5S8sa/sfnxZmpYjiqrecO3Eqqjp1VRg5xbfePRaf+S68Lca2+VhbW97SqW13Ugurg/DlL0T8n7FNsrKpa8qtZ04RltSk3ve307exPw8rOUlKT3101La6+n8zWelhrnK2DZJU+FOJ6F94djcT5blR1CUn+81/UtaaKM2WeprLKkAGnAAAAAAAAAAAAAAAAAAAAAAI0SAI0fJd4y0vItXFGMtrq10f5o+wHPJXfar9Thagmnb3FWnpa0/mX8yr8RYq7sK0Ok60ZtKnKnHoteTfkaQeZRTWmk/ujGucv43nrZ+shnbf6ZWioS1cqXNFw7qXdGicM52GXtVzpRuIfXFefuj4szgKcriVwvEqKp05fKn/gq9ajXxd/8AFW05U5J72n00Tfd568qi4nTPsahvqScjAZqjlaC7RuIL9ZT9Pdex1k9lk1NT2JLLL5UgA64AAAAAAAAAAAAAAAAAAAAAAAAAACOVaODmMWpJzox+XXVI75DX5Hn05zc8reN3F9jMK1C4x93G4t5ONWM/l0+390Xbh7O0stRaaULiC+aHk/dHnL4eNaMqtKO2uuv7FNuLa6sanjWjlTkntyj3RJN643y/irWc9p7P1puwcHhvORv6St7h6uYLu3+8Xqd5FudTU9iTWbm+VIANMgAAAAAAAAAAAAAAAAAAAAAAAAAAg5GYxSuYupR0p+a13OwR5mN4m55WsbuL7GbXNpWsqvi0JNTi9prvEt3DuaWQp+BXaV1BdV2516o/TNYyNzRc4R+ZPbXqUmvF07tVbVz8Sk+ZTW9J+myKXXHX9/Flme2fZ+tNXYk5WBy0Mra7+mvT6VYe/qvY6iL832eorPL4kAHXAAAAAAAAAAAAAAAAAAAAAAAAAAAeZdVrWzgZPDxj+stoJQ19C7L8CwnmS2taMdMTc8reN3N9jOVUq4jIQr0k4N72kukvuy9YvIUcjaxq0mt6XNH/AKs4nEGNhRc60LeUqNT5qjg9yi/sVq3vrjC3rqUnzRX1ekokeN3jr50q1mds/WWmrsSc/DZOjlLONej8r7SjvbidAul9R2efoADrgAAAAAAAAAAAAAAAAAAAAAAAAAAPM4qSal1T7oqfEOJlSjKpbx54tfS3otx4qU41IOE0mmePXlNx6c+lxWbYm+q4LJb6uhPpKK80aNa3NG6oxq0ZqUJdmim8RYz4aVWTpp0dOabZx+Ec5eWF/ONwt2E2k+nWL9UT8d3F+dKOuJufWWoA8wqRqRUoPmi1tNeZ6LkYAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+a+tIXdCVKoujKLl8crTcVTjTlD2/h6/wAjQznZeyp3Vu5OKc4LcWTd+X1PZ+vfj1+b5fxU+GOJYWMvhb+fLQfWE3/B9/YvUJxmk4NSi1tNMyzLWMJzlTqRT3HaXLrp2Pkw/Fl/wrdWtrcxdfBKTi3GG500+zT31S9Dy4d/86evbj/rLYQfhZ3dG9tqdza1I1aNSPNGcXtNH7lyMAAAAAAAAAAAAAAAAAAAAAAAAAAA8ySaafZrR6AFeyOAhOM5UlzbWuVvr+Zn2cw8a0attOCdTl2pRfSnLT7/AHNha6HDzmLjVpzrUoLna1LXmR9uHn/eVXHt/nSm/oozCsadbCZGvTpVPF/ZKM+kntbcV5Gmx35mNcU8Owdu61pCrK8hJNSjLrOPnpeTXsXf9HvE1HLYynY1akvj7WChNTe5VIropbfd+vuenDrNTxnvz8v1FwBCZJQnAAAAAAAAAAAAAAAAAAAAAAAAAAAIaWiQBUOI8ZOknO3fy1JbTnt8r9OhQ7yzvbS4jk7D9mvornik983Xs0vXzRsl5bxubedGXTmXR63p+pjnFlxlrS5r29SXw06cv+Lrzp9pJ+/p5Hz+3P419ZW8d/WfmtV4by9PN4qjewhKlOS1Uoz1unL0evzXs0dUyX9EeTuFk7jGuO6VSn4r2/pa8/x2ayi3GvrKXpn514kAG2AAAAAAAAAAAAAAAAAAAAAAAAAMACCvcW8NwztqvDahcxWoyfZr0ZYgZ1manldzq5vsUvgrgn/b9yshcXU6l3Oj4c6UP3ceu+nTb+5c0iQdzmZnkNaur7X/2Q==">
+            </a>
+        </div>
+
+        <div class="grid-cart nav-items"><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></div>
+
+        <div class="grid-toggle nav-items">
+            <a href="javascript:void(0);" class="menu-toggle" onclick="menuToggle()">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="grid-menu">
+            <ul>
+                <li><a href="index.html" class="active">Hjem</a></li>
+                <li><a href="#">Om</a></li>
+                <li><a href="#">Tjenester</a></li>
+                <li><a href="#">Butikk</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <h1>Things i want to do</h1>
+        <ul>
+            <li>Toggle button to a cross when opened</li>
+            <li>Fix big screen. hide toggle. replace grid etc. After menu nav is done!</li>
+            <li>Whn toggle pressed, move nav to top so all contet is showing:
+                -add id to i tag. change classname when button is clicked. make sure to reset
+                if clicked and resized. trigger on resize to make sure
+                classname has default val.
+            </li>
+            <li>Sticky nav, javascript</li>
+            <li>Logo in navbar overflows when adjusting to small size. Must be fixed when 
+                replaced with real logo
+            </li>
+
+        </ul>
+    </div>
+
+    <div>
+        <h1>Lorems</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magnam reiciendis, molestias similique sequi
+            at nemo eaque repellendus. Quas minus tempore alias quo mollitia voluptates saepe modi culpa omnis aliquam!
+        </p>
+    </div>
+    <script>
+
+        /* Toggle between adding and removing the responsive class
+         to navbar from menu click in small screen
+         and change toggle button*/
+        function menuToggle() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+
+        /* Make sure responsive class is not present if screen >= 600px */
+        function removeResponsiveClass() {
+            var x = document.getElementById("navbar");
+            if (x.classList.contains("responsive") && window.innerWidth >= 600) {
+                x.classList.remove("responsive");
+                x.className = "navbar";
+            }
+        }
+
+        window.addEventListener("resize", removeResponsiveClass);
+
+    </script>
+
+
+</body>
+
+</html>
