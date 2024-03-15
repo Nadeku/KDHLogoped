@@ -5,7 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!--Font Awesome Library-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Chicle&display=swap" rel="stylesheet">
+
+
 
 
     <style>
@@ -20,8 +30,11 @@
         */
 
         body {
+
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
         }
+
 
         header {
             width: 100%;
@@ -34,12 +47,13 @@
 
         .navbar {
 
-            clear: both;
             /* navbar stays under header and dont float togheter */
+            clear: both;
             display: grid;
             grid-template-columns: repeat(11, 1fr);
             grid-template-rows: 1;
 
+            /* Main not float together with nav */
             margin-bottom: 50px;
         }
 
@@ -47,7 +61,6 @@
             grid-template-rows: 6;
         }
 
-        /* Nav grid */
         .grid-logo {
             grid-column-start: 1;
             grid-column-end: 3;
@@ -78,13 +91,13 @@
             font-size: 2em;
         }
 
-        /* Icon color */
+
         .nav-items i {
+            /* Icon color */
             color: black;
 
-        }
 
-     
+        }
 
         .nav-items a {
             display: flex;
@@ -100,7 +113,11 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+            /* Nav links font */
+            font-family: Chicle;
+
         }
+
 
         .navbar li a {
             color: black;
@@ -111,6 +128,8 @@
             font-size: 1.5em;
             border-top: 1px solid #df7dc8;
             border-bottom: 1px solid #df7dc8;
+
+
 
         }
 
@@ -129,12 +148,75 @@
             display: block;
         }
 
+        /* MAIN */
+
+        .grid-container {
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 1px 1 px;
+
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            border: 1px solid black;
+
+        }
+
+        /* Hei og velkommen */
+        .item1 {
+
+            grid-column-start: 1;
+            grid-column-end: 13;
+            grid-row-start: 1;
+            grid-row-end: auto;
+
+            border: 100px solid transparent;
+            border-image: url("https://cdn.pixabay.com/photo/2023/08/07/13/40/flowers-8175044_1280.png") 300 round;
+            padding: 30px;
+
+        }
+
+        /* Quote */
+        .item2 {
+
+            grid-column-start: 1;
+            grid-column-end: 13;
+            grid-row: auto;
+          
+
+
+            padding: 100px;
+            background-image: url("https://cdn.pixabay.com/photo/2017/09/24/19/16/boy-2782835_1280.jpg"), url("https://cdn.pixabay.com/photo/2017/09/24/19/06/girls-2782781_1280.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+
+        }
+
+        .item4 {
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: auto;
+            grid-row-end: auto;
+        }
+
+        .item5 {
+            grid-column-start: 7;
+            grid-column-end: 13;
+            grid-row-start: auto;
+            grid-row-end: auto;
+        }
+
 
         @media only screen and (min-width: 600px) and (max-width: 800px) {
-
+            /*
             .navbar li a {
                 font-size: 1.2em;
             }
+            */
 
         }
 
@@ -162,25 +244,48 @@
                 border: none;
                 position: relative;
                 display: block;
-                padding-bottom: 3px;
-                /* So a:hover border is closer to text */
+
             }
 
             .navbar ul {
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
+
             }
 
             .navbar li {
                 flex-wrap: wrap;
+                width: 100%;
+
             }
 
             .navbar li a:hover,
             .navbar li a:active {
                 text-decoration: none;
-                text-decoration: underline;
+
             }
+
+            .navbar li a:hover::after {
+                width: 70%;
+                transition: all 0.5s;
+            }
+
+            .navbar li a::after {
+                content: "";
+                display: block;
+                margin-top: 8px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 2px;
+                width: 0px;
+                background-color: #df7dc8;
+            }
+
+
+
+            /* MAIN */
+
 
         }
     </style>
@@ -201,8 +306,8 @@
 
         <div class="grid-logo nav-items"><a href="#"><img style="width: 80px;"
                     src="https://th.bing.com/th?id=OIP.g5AKW21APdv9ToQ-pwgo9AHaGK&w=274&h=228&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2">
-                <img style="width: 60px;"
-                    src="data:image/jpeg;base64,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">
+
+
             </a>
         </div>
 
@@ -221,35 +326,72 @@
                 <li><a href="#">Tjenester</a></li>
                 <li><a href="#">Butikk</a></li>
                 <li><a href="#">Kontakt</a></li>
-                <li></li>
             </ul>
         </div>
     </nav>
 
-    <div>
-        <h1>Things i want to do</h1>
-        <ul>
-            <li>Toggle button to a cross when opened</li>
-            <li>Fix big screen. hide toggle. replace grid etc. After menu nav is done!</li>
-            <li>Whn toggle pressed, move nav to top so all contet is showing:
-                -add id to i tag. change classname when button is clicked. make sure to reset
-                if clicked and resized. trigger on resize to make sure
-                classname has default val.
-            </li>
-            <li>Sticky nav, javascript</li>
-            <li>Logo in navbar overflows when adjusting to small size. Must be fixed when 
-                replaced with real logo
-            </li>
 
-        </ul>
+    <div class="grid-container">
+
+
+        <div class="grid-item item1">
+            <p>Hei og velkommen til</p>
+            <h2>KDHLOGOPED</h2>
+            <p>
+                KDHlogoped hjelper deg som jobber med barn og unge, eller har barn
+                selv, som ønsker tips og ideer til hvordan du kan jobbe med språk- og
+                kommunikasjonsrelaterte emner. Jeg deler alt fra generelle tips i din
+                hverdag, til mer spesifikke tips, blant annet evidensbaserte
+                tilnærminger for barn med språk- og kommunikasjonsrelaterte
+                utfordringer. Jeg deler også gratis spill og fortellinger, samt
+                aktivitetshefter.
+            </p>
+        </div>
+
+        <div class="grid-item item2">
+            <h>Lekbasert læring</h><br />
+            <h>“Barn uttrykker seg gjennom lek, og det er gjennom leken at ord får
+                liv!”</h>
+        </div>
+
+        <div class="grid-item item4">
+            <h1>Things i want to do</h1>
+            <ul>
+                <li>HOver effect on toggle and cart</li>
+                <li>Cross when toggle is clicked</li>
+                <li>When toggle pressed, move nav to top so all contet is showing
+                   
+                </li>
+                <li>Sticky nav, javascript</li>
+                <li>More space between navbar and menulinks when open toggle. 
+                </li>
+    
+            </ul>
+        </div>
+    
+        <div class="grid-item item5">
+            <h1>Lorems</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magnam reiciendis, molestias similique sequi
+                at nemo eaque repellendus. Quas minus tempore alias quo mollitia voluptates saepe modi culpa omnis aliquam!
+            </p>
+        </div>
+    
+
     </div>
 
-    <div>
-        <h1>Lorems</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magnam reiciendis, molestias similique sequi
-            at nemo eaque repellendus. Quas minus tempore alias quo mollitia voluptates saepe modi culpa omnis aliquam!
+
+ 
+
+    <footer style="background-color: rgb(131, 131, 152);">
+
+        <p> Herer is a footer with links and contact.
+
         </p>
-    </div>
+
+    </footer>
+
+
+
     <script>
 
         /* Toggle between adding and removing the responsive class
