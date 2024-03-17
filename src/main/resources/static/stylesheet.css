@@ -293,7 +293,7 @@ footer a:active {
 }
 
 /* Big screens */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
 
     .grid-cart {
         grid-column-start: 11;
