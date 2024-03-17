@@ -96,7 +96,7 @@ header img {
 /* Icon hover */
 .nav-items:not(.grid-logo) a:hover,
 .nav-items:not(.grid-logo) a:active {
-    transform: scale(1.2);
+    transform: scale(1.1);
 
 }
 
@@ -298,6 +298,7 @@ footer a:active {
     .grid-cart {
         grid-column-start: 11;
         grid-column-end: 13;
+        z-index: 2;
     }
 
     .grid-menu {
