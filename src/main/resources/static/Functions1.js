@@ -4,13 +4,15 @@
 window.addEventListener("scroll", backtotop);
 
 function backtotop() {
-  var btn = document.getElementsByClassName("topBtn")[0];
-  var scrollHeight = 200;
-  if (window.scrollY > scrollHeight) {
-    btn.style.display = 'block';
-  } else {
-    btn.style.display = 'none';
-  }
+  
+    var btn = document.getElementsByClassName("topBtn")[0];
+    var scrollHeight = 200;
+    if (window.scrollY > scrollHeight && window.innerWidth <= 600) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  
 
 }
 
