@@ -5,8 +5,16 @@ html {
 }
 
 body {
+
+    /* This takes away little scroll horizontally
+    If used, all divs should have enough padding so no content gets out of sight.
+    Or fix all divs so it doesnt take up more space than 100% cuz of padding and margins.
+    */
+
+    overflow-x: hidden;
+ 
     margin: 0;
-    font-family: "Comic Sans MS";
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 a {
@@ -19,9 +27,6 @@ a:visited {
     color: inherit;
 }
 
-header {
-    width: 100%;
-}
 
 header img {
     float: right;
@@ -42,9 +47,10 @@ header img {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px;
 
-    /* Main not float together with nav */
-    margin-bottom: 50px;
-    padding-right: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 30px;
+    
     background-color: white;
 
 }
@@ -59,7 +65,8 @@ header img {
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 2;
-    /* justify-self: start; */
+    justify-self: start; 
+
     color: rgb(75, 0, 128);
 
 
@@ -78,6 +85,7 @@ header img {
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 2;
+ 
 }
 
 .grid-menu {
@@ -94,8 +102,9 @@ header img {
     justify-content: center;
     align-items: center;
     /* Icon size (and logo) */
-    font-size: 2em;
+    font-size: 1.5em;
 }
+
 
 /* Icon hover */
 .nav-items:not(.grid-logo) a:hover,
@@ -137,7 +146,9 @@ header img {
     padding-top: 30px;
     padding-bottom: 30px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    /* Chicle could use some more spacing, other fonts may not 
+    letter-spacing: 1px;*/
     border-top: 1px solid #df7dc8;
     border-bottom: 1px solid #df7dc8;
 }
@@ -162,7 +173,7 @@ header img {
 .grid-container {
     display: grid;
     gap: 20px;
-    padding: 10px;
+   
 }
 
 .grid-item {
@@ -216,30 +227,31 @@ header img {
 
 footer {
     height: auto;
-    padding: 30px;
     display: grid;
-   
+
     background-color: rgb(247, 236, 255);
     grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
+    gap: 30px 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 
 .contact-links {
     grid-row: 2;
-    grid-column: 1 / 13;
-    border-top: 1px solid black;
+    grid-column: 2 / 12;
+    border-top: 1px solid lightgray;
 }
 
 .fnav-links {
     grid-row: 3;
-    grid-column: 1 / 13;
-    border-top: 1px solid black;
+    grid-column: 2 / 12;
+    border-top: 1px solid lightgray;
 }
 
 .nyhetsbrev {
     grid-row: 1;
-    grid-column: 1 / 13;
+    grid-column: 2 / 12;
 
     
 }
@@ -300,7 +312,7 @@ footer a:active {
 }
 
 /* Big screens */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 
     .grid-cart {
         grid-column-start: 11;
@@ -309,14 +321,14 @@ footer a:active {
     }
 
     .grid-menu {
-        grid-column-start: 4;
+        grid-column-start: 3;
         grid-column-end: 11;
         grid-row-start: 1;
     }
 
     .grid-logo {
         grid-column-start: 1;
-        grid-column-end: 4;
+        grid-column-end: 3;
 
     }
 
@@ -328,6 +340,7 @@ footer a:active {
         border: none;
         position: relative;
         display: block;
+        font-size: 1.5em;
 
     }
 
@@ -370,18 +383,13 @@ footer a:active {
 
 @media screen and (min-width: 1200px) {
 
-    footer {
-        padding-left: 60px;
-       
-       /* gap: 30px;*/
 
-    }
 
     .contact-links {
         grid-row: 1 / 6;
-        grid-column: 1 / 4;
+        grid-column: 2 / 5;
         border-top: none;
-        border-left: 1px solid black;
+        border-left: 1px solid gray;
         text-align: center;
         gap: 0;
 
@@ -389,20 +397,20 @@ footer a:active {
 
     .fnav-links {
         grid-row: 1 / 6;
-        grid-column: 4 / 7;
+        grid-column: 5 / 7;
         border-top: none;
-        border-left: 1px solid black;
+        border-left: 1px solid gray;
         text-align: center;
     }
 
     .nyhetsbrev {
         grid-row: 1 / 6;
-        grid-column: 7 / 13;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
+        grid-column: 7 / 12;
+        border-left: 1px solid gray;
+        border-right: 1px solid grey;
         text-align: center;
-        padding-left: 40px;
-        padding-right: 40px;
+       
+   
         
     }
 }

@@ -31,9 +31,7 @@ function menuToggle() {
 
     /* Move screen to navbar*/
     var target = document.querySelector('nav');
-    var headerHeight = document.querySelector('header').offsetHeight;
-    var extragap = 10;
-    var targetPosition = target.offsetTop - headerHeight - extragap;
+    var targetPosition = target.offsetTop;
     window.scrollTo({
       top: targetPosition,
       behavior: "smooth"
@@ -59,9 +57,13 @@ function menuToggle() {
 /* Make sure responsive class is not present if screen >= 600px */
 function removeResponsiveClass() {
   var x = document.getElementById("navbar");
+  var toggleIcon = document.getElementById("toggle");
   if (x.classList.contains("responsive") && window.innerWidth >= 600) {
     x.classList.remove("responsive");
     x.className = "navbar";
+    /* Change icon */
+    toggleIcon.classList.remove("fa-xmark");
+    toggleIcon.classList.add("fa-bars");
   }
 }
 
