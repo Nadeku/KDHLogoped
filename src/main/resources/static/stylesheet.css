@@ -9,12 +9,11 @@ body {
     /* This takes away little scroll horizontally
     If used, all divs should have enough padding so no content gets out of sight.
     Or fix all divs so it doesnt take up more space than 100% cuz of padding and margins.
+    overflow-x: hidden;
     */
 
-    overflow-x: hidden;
-
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Comic Sans Ms'
 }
 
 a {
@@ -335,7 +334,7 @@ footer a:active {
 }
 
 /* Big screens */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
 
     /* || NAV || */
     .grid-cart {
