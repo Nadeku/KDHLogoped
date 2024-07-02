@@ -446,8 +446,45 @@ footer a:active {
   
   .left, .right {
     width: 100%; /* Take up the full width of the parent */
-    text-align: center; /* Center the text */
+    text-align: start; /* Center the text */
   }
+
+/* || TJENESTER || */
+/* bygger på om side */
+
+#tjenester{
+    background-color: #e890a07a ;
+  }
+
+/* || BUTIKK|| */
+
+.butikk {
+    grid-column: 1/13;
+    grid-row: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: start;
+
+}
+
+.butikk h1{
+    text-align: center;
+    font-size: 300%;
+    color:#254c4c;
+}
+
+.butikk-content-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.butikk-content-item img{
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* || MEDIA QUERIES || */
 
@@ -579,6 +616,16 @@ footer a:active {
       .left, .right {
         width: 45%; /* Adjust as needed */
       }
+
+      .butikk{
+        grid-template-columns: repeat(3, 1fr); /* Display items in a row on larger screens */
+    }
+
+    .butikk-content-item {
+        width: 100%;
+    }
+
+
 
 
 
