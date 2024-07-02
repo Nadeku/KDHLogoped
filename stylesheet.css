@@ -17,7 +17,7 @@ rgb(236, 172, 172)
 rgb(232, 144, 160)
 
 */
-.colors {
+/* .colors {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,7 +43,7 @@ rgb(232, 144, 160)
     background-color: #e890a0;
 }
 
-
+*/
 
 /* || SITEWIDE ||  */
 
@@ -60,7 +60,7 @@ body {
     */
 
     margin: 0;
-    font-family: 'Roboto' , 'Comic Sans Ms'
+    font-family: 'Quicksand';
 }
 
 a {
@@ -79,6 +79,10 @@ header img {
     max-width: 100%;
     height: 30vh;
     padding-right: 5vw;
+}
+
+p {
+    line-height: 2; /* Default is usually around 1.2 */
 }
 
 /* || NAV || */
@@ -107,6 +111,13 @@ header img {
     grid-row-start: 1;
     grid-row-end: 2;
     justify-self: start;
+    background-color: #ecacac;
+    padding: 20%;
+}
+
+.grid-logo a {
+    color: white;
+    font-weight: bold; /* Makes the font thicker */
 }
 
 
@@ -206,6 +217,8 @@ header img {
     grid-template-columns: repeat(12, 1fr);
     /* min 100px, max auto */
     grid-auto-rows: minmax(100px, auto);
+    width: 100%;
+    
 }
 
 header {
@@ -235,15 +248,32 @@ footer {
 
 /*Hei og velkommen */
 .item1 {
-    /*background-image: url("https://cdn.pixabay.com/photo/2023/08/07/13/40/flowers-8175044_1280.png");*/
-    /* background-color: mediumpurple; */
-    border: 3em solid transparent;
-    border-image: url("https://cdn.pixabay.com/photo/2023/08/07/13/40/flowers-8175044_1280.png") 300 round;
+    background-color: #c4e2da56; 
     font-size: 0.8em;
-    padding: 2em;
+    text-align: start;
     grid-column: 1 / 13;
     grid-row: 2 / 3;
 
+}
+
+.item1-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item1-text {
+    flex: 1;
+    padding: 2em; /* Adjust the value as needed */
+}
+
+.item1-text, .item1-img {
+    flex: 1;
+}
+
+.item1-img {
+    background-image: url('src/main/resources/static/images/kdh.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /*quote*/
@@ -258,21 +288,43 @@ footer {
 */
 
 .item2 {
-    padding: 1em;
-    /* Just a template image for now */
-    background-image: url("https://cdn.pixabay.com/photo/2017/09/24/19/16/boy-2782835_1280.jpg"), url("https://cdn.pixabay.com/photo/2017/09/24/19/06/girls-2782781_1280.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    grid-column: 3 / 11;
-    grid-row: 3 / 4;
-
-    /* Just to see where the box is */
-    border: 1px solid red;
-
+    grid-column: 1 / 13;
+    grid-row: auto;
+    padding: 5%;
+    font-size: larger;
+    background: linear-gradient(white, #f1d3d3);
     
+    
+/*#86c6c5
+rgb(134, 198, 197)
+
+#a8cec3
+rgb(168, 206, 195)
+
+#c4e2da
+rgb(196, 226, 218)
+
+#ecacac
+rgb(236, 172, 172)
+
+#e890a0
+rgb(232, 144, 160)*/
+
 }
 
+.item2 p{
+    text-align: start;
+    color: #864f59;
+}
+
+
+.item2 h1{
+    text-align: start;
+    background: linear-gradient(to right, #86c6c5, #ecacac, #de536d);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
 .footer img {
     display: block;
     margin-left: auto;
@@ -371,7 +423,8 @@ footer a:active {
     .grid-logo {
         grid-column-start: 1;
         grid-column-end: 3;
-        justify-self: auto;
+      /*justify-self: auto;*/
+        padding: 10%;
 
     }
 
@@ -428,14 +481,13 @@ footer a:active {
         font-size: 16px;
     }
     
-    .item1{
-        grid-column: 2 / 12;
-        border-width: 7em;
 
-    }
+   /* .item2{
+        grid-column: 4 / 10;
+    }*/
 
     .item2{
-        grid-column: 4 / 10;
+        font-size: larger;
     }
 
 
