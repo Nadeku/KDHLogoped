@@ -60,7 +60,7 @@ body {
     */
 
     margin: 0;
-    font-family: 'Comic Sans Ms'
+    font-family: 'Roboto' , 'Comic Sans Ms'
 }
 
 a {
@@ -107,7 +107,6 @@ header img {
     grid-row-start: 1;
     grid-row-end: 2;
     justify-self: start;
-    color: rgb(75, 0, 128);
 }
 
 
@@ -170,21 +169,17 @@ header img {
     margin: 0;
     padding: 0;
     /* Nav links font */
-    font-family: Chicle;
+    font-family: 'Quicksand';
 }
 
 
 .navbar li a {
     color: black;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-decoration: none;
     font-size: 1.3em;
-    /* Chicle could use some more spacing, other fonts may not 
-    letter-spacing: 1px;*/
-    border-top: 1px solid #df7dc8;
-    border-bottom: 1px solid #df7dc8;
 }
 
 
@@ -348,26 +343,6 @@ footer a:active {
     text-decoration: underline;
 }
 
-
-/* Back to top link */
-.topBtn {
-    display: none;
-    position: fixed;
-    bottom: 10%;
-    left: 85%;
-    border: 3px solid black;
-    background-color: rgb(75, 0, 128, 0.1);
-    z-index: 99;
-    font-size: 2rem;
-    line-height: 3rem;
-    text-align: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    padding: 0.25rem;
-}
-
-
 /* || MEDIA QUERIES || */
 
 /* Small screens */
@@ -409,7 +384,7 @@ footer a:active {
         position: relative;
         display: block;
         font-size: 1.5em;
-
+        padding-top: 30px; /* Hoover takes space, so need to adjust to center text */
     }
 
     .navbar ul {
@@ -444,7 +419,7 @@ footer a:active {
         margin-right: auto;
         height: 2px;
         width: 0px;
-        background-color: #df7dc8;
+        background-color: #e890a0;
     }
 
     /* || MAIN || */
