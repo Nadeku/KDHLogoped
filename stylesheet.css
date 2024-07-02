@@ -233,22 +233,45 @@ footer {
 
 .thoughts {
     /* This div will be deleted */
-    grid-column: 3 / 11;
+    grid-column: 1 / 13;
     grid-row: 4 / 5;
-    font-size: small;
-    border: 5px solid rgb(34, 0, 79);
-    padding: 1em;
+    background-color: #a8cec3c9;
+    padding: 10%;
+}
 
+.thoughts h3{
+    text-align: end;
+    font-size: larger;
+    color:#254c4c
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
+    font-size: 16px;
+}
+
+.grid-container {
+    row-gap: 50px;
+}
+
+.item1-text {
+    box-sizing: border-box;
+    padding: 2em; /* Adjust as needed */
+}
+
+.item1-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack items on mobile */
+    grid-template-rows: auto auto; /* Two rows for text and image */
+}
+
+.item1-img {
+    width: 100%;
+    object-fit: cover;
 }
 
 /*Hei og velkommen */
 .item1 {
-    background-color: #c4e2da56; 
+    background: #c4e2da56; 
     font-size: 0.8em;
     text-align: start;
     grid-column: 1 / 13;
@@ -256,25 +279,10 @@ footer {
 
 }
 
-.item1-content {
-    display: flex;
-    justify-content: space-between;
+.item1 h1{
+    color: #5b363d;
 }
 
-.item1-text {
-    flex: 1;
-    padding: 2em; /* Adjust the value as needed */
-}
-
-.item1-text, .item1-img {
-    flex: 1;
-}
-
-.item1-img {
-    background-image: url('src/main/resources/static/images/kdh.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 /*quote*/
 /* OLD CODE
@@ -313,7 +321,7 @@ rgb(232, 144, 160)*/
 }
 
 .item2 p{
-    text-align: start;
+    text-align: center;
     color: #864f59;
 }
 
@@ -323,8 +331,31 @@ rgb(232, 144, 160)*/
     background: linear-gradient(to right, #86c6c5, #ecacac, #de536d);
     -webkit-background-clip: text;
     color: transparent;
-
 }
+
+.quote {
+    position: relative;
+    font-size: 24px;
+}
+
+.quote::before {
+    content: "“";
+    font-size: 10em;
+    position: absolute;
+    left: -10px; /* Adjust as needed */
+    top: -210px; /* Adjust as needed */
+    color:#e890a0; /* Adjust as needed */
+}
+
+.quote::after {
+    content: "”";
+    font-size: 10em;
+    position: absolute;
+    right: -24px; /* Adjust as needed */
+    bottom: -310px; /* Adjust as needed */
+    color: #e890a0; /* Adjust as needed */
+}
+
 .footer img {
     display: block;
     margin-left: auto;
@@ -394,6 +425,29 @@ footer a:hover,
 footer a:active {
     text-decoration: underline;
 }
+
+
+/* || OM SIDE || */
+
+.omkdh{
+    grid-column: 1/13;
+    grid-row: auto;
+}
+.content-omkdh {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center the children horizontally */
+  }
+
+  .left img {
+    max-width: 100%;  /* Limit the width of the image to 100% of its container */
+    height: auto; /* Let the height adjust automatically to maintain the aspect ratio */
+  }
+  
+  .left, .right {
+    width: 100%; /* Take up the full width of the parent */
+    text-align: center; /* Center the text */
+  }
 
 /* || MEDIA QUERIES || */
 
@@ -480,6 +534,28 @@ footer a:active {
     .grid-item{
         font-size: 16px;
     }
+
+    .grid-container {
+        row-gap: 50px;
+    }
+
+    .item1-content {
+        grid-template-columns: 1fr 1fr; /* Side by side on larger screens */
+    }
+
+    .item1-text {
+        padding: 25%; /* Increase padding on larger screens */
+        padding-top: 10%;
+    }
+
+    .item1 h1{
+        font-size: 250%;
+    }
+
+    .item2 h1{
+        text-align: center;
+    }
+
     
 
    /* .item2{
@@ -489,6 +565,20 @@ footer a:active {
     .item2{
         font-size: larger;
     }
+
+    .thoughts h3{
+        font-size: 400%;
+        text-align: center;
+    }
+
+    .content-omkdh {
+        flex-direction: row; /* Put the children side by side on larger screens */
+        justify-content: space-between; /* Add some space between the children */
+      }
+    
+      .left, .right {
+        width: 45%; /* Adjust as needed */
+      }
 
 
 
