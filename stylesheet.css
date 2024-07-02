@@ -1,3 +1,50 @@
+/* 
+Pallette color codes:
+
+#86c6c5
+rgb(134, 198, 197)
+
+#a8cec3
+rgb(168, 206, 195)
+
+#c4e2da
+rgb(196, 226, 218)
+
+#ecacac
+rgb(236, 172, 172)
+
+#e890a0
+rgb(232, 144, 160)
+
+*/
+.colors {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+.box1 {
+    background-color: #86c6c5;
+}
+.box2 {
+    background-color: #a8cec3;
+}
+.box3 {
+    background-color: #c4e2da;
+}
+.box4 {
+    background-color: #ecacac;
+}
+.box5 {
+    background-color: #e890a0;
+}
+
+
+
 /* || SITEWIDE ||  */
 
 html {
