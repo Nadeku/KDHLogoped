@@ -1,22 +1,4 @@
 
-
-/* Hide/show back to top button */
-window.addEventListener("scroll", backtotop);
-
-function backtotop() {
-  
-    var btn = document.getElementsByClassName("topBtn")[0];
-    var scrollHeight = 200;
-    if (window.scrollY > scrollHeight && window.innerWidth <= 600) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  
-
-}
-
-
 /* Toggle between adding and removing the responsive class
  to navbar from menu click in small screen
  and change toggle button*/
@@ -49,7 +31,6 @@ function menuToggle() {
     toggleIcon.classList.remove("fa-xmark");
     toggleIcon.classList.add("fa-bars");
   }
-
 
 
 }
