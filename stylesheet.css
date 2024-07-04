@@ -73,14 +73,6 @@ a:visited {
     color: inherit;
 }
 
-
-header img {
-    float: right;
-    max-width: 100%;
-    height: 30vh;
-    padding-right: 5vw;
-}
-
 p {
     line-height: 2; /* Default is usually around 1.2 */
 }
@@ -90,19 +82,18 @@ p {
 
 .navbar {
 
-    /* navbar stays under header and dont float togheter 
-    and keep content under clear from nav */
-    clear: both;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+
     background-color: white;
+    position: relative;
 }
 
 .navbar.responsive {
+    height: 100vh;
     grid-template-rows: 100px repeat(7, 1fr);
+    z-index: 999; /* Ensure the navbar is on top */
 }
 
 .grid-logo {
@@ -112,7 +103,8 @@ p {
     grid-row-end: 2;
     justify-self: start;
     background-color: #ecacac;
-    padding: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .grid-logo a {
@@ -178,9 +170,8 @@ p {
 .navbar ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    /* Nav links font */
-    font-family: 'Quicksand';
+    padding: 0; 
+    padding-top: 2em; 
 }
 
 
@@ -191,16 +182,13 @@ p {
     padding-bottom: 10px;
     text-decoration: none;
     font-size: 1.3em;
-}
-
-
-.navbar li a {
     display: none;
 }
 
 .navbar li a:hover,
 .navbar li a:active {
     text-decoration: underline;
+    text-decoration-color: #e890a0;
 }
 
 .navbar.responsive li a {
@@ -356,24 +344,12 @@ rgb(232, 144, 160)*/
     color: #e890a0; /* Adjust as needed */
 }
 
-.footer img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 25%;
-    max-height: 25%;
-
-    /*NB! Instagram img has an inline style to manage the size for now. sorry*/
-}
-
-
 /* FOOTER */
 
 footer {
     height: auto;
     display: grid;
-
-    background-color: rgb(247, 236, 255);
+    background-color: rgba(236, 172, 172, 0.349);
     grid-template-columns: repeat(12, 1fr);
     gap: 30px 0;
     padding-bottom: 20px;
@@ -384,25 +360,43 @@ footer {
 .contact-links {
     grid-row: 2;
     grid-column: 2 / 12;
-    border-top: 1px solid lightgray;
+    border-top: 1px solid rgb(168, 206, 195);
 }
 
-.fnav-links {
-    grid-row: 3;
-    grid-column: 2 / 12;
-    border-top: 1px solid lightgray;
+.some-links {
+    grid-row: 1;
+    grid-column: 2 / 12;  
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+}
+
+.some-links a{
+    font-size: 3em;  
+}
+
+.some-links ul{
+    display: flex; 
+    list-style-type: none;
+}
+
+.some-links li {
+    margin: 0 30px; /* Space betweenlinks */
 }
 
 .nyhetsbrev {
-    grid-row: 1;
+    grid-row: 3;
     grid-column: 2 / 12;
-
-
+    border-top: 1px solid rgb(168, 206, 195);
 }
 
 footer h3 {
-    font-family: Chicle;
-    font-weight: 100;
+    font-weight: bold;
+}
+
+footer h4 {
+    margin-bottom: 0%;
 }
 
 
@@ -488,13 +482,6 @@ footer a:active {
 
 /* || MEDIA QUERIES || */
 
-/* Small screens */
-@media screen and (max-width: 600px) {
-
-    /* Mobile first! Sure u want to add something here?*/
-
-}
-
 /* Big screens */
 @media screen and (min-width: 600px) {
 
@@ -528,7 +515,6 @@ footer a:active {
         position: relative;
         display: block;
         font-size: 1.5em;
-        padding-top: 30px; /* Hoover takes space, so need to adjust to center text */
     }
 
     .navbar ul {
@@ -631,36 +617,60 @@ footer a:active {
 
 }
 
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+
+    /* || FOOTER || */
+
+    .contact-links {
+        grid-row: 1 / 6;
+        grid-column: 2 / 6;
+        border: none;
+        text-align: center;
+        gap: 0;
+
+    }
+
+    .some-links {
+        grid-row: 1 / 2;
+        grid-column: 6 / 12;
+        border: none;
+        text-align: center;
+    }
+
+    .nyhetsbrev {
+        grid-row: 2 / 5;
+        grid-column: 6 / 12;
+        text-align: center;
+        border: none;
+    }
+
+}
+
 @media screen and (min-width: 1200px) {
 
     /* || FOOTER || */
 
     .contact-links {
         grid-row: 1 / 6;
-        grid-column: 2 / 5;
-        border-top: none;
-        border-left: 1px solid gray;
+        grid-column: 5 / 8;
+        border: none;
         text-align: center;
         gap: 0;
 
     }
 
-    .fnav-links {
+    .some-links {
         grid-row: 1 / 6;
-        grid-column: 5 / 7;
-        border-top: none;
-        border-left: 1px solid gray;
+        grid-column: 2 / 5;
+        border: none;
         text-align: center;
     }
 
     .nyhetsbrev {
-        grid-row: 1 / 6;
-        grid-column: 7 / 12;
-        border-left: 1px solid gray;
-        border-right: 1px solid grey;
+        grid-row: 2 / 5;
+        grid-column: 8 / 12;
         text-align: center;
-
-
-
+        border: none;
     }
+
 }
